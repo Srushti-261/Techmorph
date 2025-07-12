@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
+        
         <header class="header">
             <div class="header-content">
                 <h1 class="logo">StackIt</h1>
@@ -22,20 +22,20 @@
             </div>
         </header>
 
-        <!-- Main Content -->
+    
         <main class="main-content">
             <form class="ask-question-form">
-                <!-- Title Section -->
+            
                 <div class="form-group">
                     <label for="question-title" class="form-label">Title</label>
                     <input type="text" id="question-title" class="form-input title-input" placeholder="Enter your question title">
                 </div>
 
-                <!-- Description Section -->
+                
                 <div class="form-group">
                     <label for="question-description" class="form-label">Description</label>
                     
-                    <!-- Rich Text Toolbar -->
+                    
                     <div class="rich-text-toolbar">
                         <button type="button" class="toolbar-btn" data-action="bold" title="Bold">
                             <strong>B</strong>
@@ -75,30 +75,30 @@
                         </button>
                     </div>
                     
-                    <!-- Rich Text Editor -->
+                    
                     <div id="question-description" class="rich-text-editor" contenteditable="true" placeholder="Describe your question in detail..."></div>
                 </div>
 
-                <!-- Tags Section -->
+            
                 <div class="form-group">
                     <label for="question-tags" class="form-label">Tags</label>
                     <input type="text" id="question-tags" class="form-input tags-input" placeholder="Enter tags separated by commas (e.g., javascript, html, css)">
                 </div>
 
-                <!-- Submit Button -->
+            
                 <div class="form-actions">
                    <a href="screen4.html" class="submit-btn">Submit</a>
                 </div>
             </form>
         </main>
 
-        <!-- Screen Label -->
+        
         <div class="screen-label">
             <div class="screen-title">Screen 2</div>
             <div class="screen-subtitle">Ask Question</div>
         </div>
 
-        <!-- Rich Text Label -->
+
         <div class="rich-text-label">
             HTML Rich Text
         </div>
@@ -112,7 +112,7 @@
             const titleInput = document.getElementById('question-title');
             const tagsInput = document.getElementById('question-tags');
 
-            // Rich text toolbar functionality
+        
             toolbarButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -136,7 +136,7 @@
                 });
             });
 
-            // Rich text editor placeholder
+    
             richTextEditor.addEventListener('focus', function() {
                 if (this.textContent.trim() === '') {
                     this.innerHTML = '';
@@ -149,12 +149,12 @@
                 }
             });
 
-            // Initialize placeholder
+            
             if (richTextEditor.textContent.trim() === '') {
                 richTextEditor.innerHTML = '<span class="placeholder">Describe your question in detail...</span>';
             }
 
-            // Form submission
+           
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
@@ -174,7 +174,7 @@
                     return;
                 }
                 
-                // Simulate form submission
+               
                 console.log('Question submitted:', {
                     title: title,
                     description: richTextEditor.innerHTML,
@@ -183,13 +183,13 @@
                 
                 alert('Question submitted successfully!');
                 
-                // Reset form
+               
                 titleInput.value = '';
                 richTextEditor.innerHTML = '<span class="placeholder">Describe your question in detail...</span>';
                 tagsInput.value = '';
             });
 
-            // Header button interactions
+           
             document.querySelector('.home-btn').addEventListener('click', function() {
                 console.log('Navigate to home');
             });
