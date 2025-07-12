@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StackIt - Q&A Platform</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Quill.js for Rich Text Editor -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Header -->
     <header class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
@@ -48,10 +45,7 @@
             </nav>
         </div>
     </header>
-
-    <!-- Main Content Container -->
     <main class="main-container">
-        <!-- Home Page -->
         <div id="homePage" class="page active">
             <div class="page-header">
                 <h2>Latest Questions</h2>
@@ -76,7 +70,6 @@
             </div>
         </div>
 
-        <!-- Ask Question Page -->
         <div id="askPage" class="page">
             <div class="page-header">
                 <h2>Ask a Question</h2>
@@ -135,15 +128,12 @@
             </form>
         </div>
 
-        <!-- Question Detail Page -->
         <div id="questionDetailPage" class="page">
             <div id="questionDetail">
-                <!-- Question details will be loaded here -->
             </div>
         </div>
     </main>
 
-    <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -161,7 +151,6 @@
         </div>
     </div>
 
-    <!-- Delete Confirmation Modal -->
     <div id="deleteModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeDeleteModal()">&times;</span>
@@ -173,8 +162,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Scripts -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script src="script.js"></script>
 </body>
