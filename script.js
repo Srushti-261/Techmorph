@@ -1,6 +1,3 @@
-// StackIt Q&A Platform - Complete JavaScript
-
-// Global Variables
 let currentUser = null;
 let quill = null;
 let answerQuill = null;
@@ -34,10 +31,8 @@ let notifications = [
     }
 ];
 
-// Base URL for API calls
 const API_BASE_URL = 'http://localhost:5000/api';
 
-// Sample questions data
 let sampleQuestions = [
     {
         id: 1,
@@ -109,29 +104,27 @@ let sampleQuestions = [
     }
 ];
 
-// Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
 
 function initializeApp() {
-    // Initialize Rich Text Editor
+
     initializeQuillEditor();
     
-    // Load initial questions
+    
     loadQuestions();
     
-    // Update notification count
+    
     updateNotificationCount();
     
-    // Show home page by default
+    
     showPage('home');
     
-    // Add event listeners
+    
     setupEventListeners();
 }
 
-// Initialize Quill Rich Text Editor
 function initializeQuillEditor() {
     quill = new Quill('#editor', {
         modules: {
@@ -142,15 +135,12 @@ function initializeQuillEditor() {
     });
 }
 
-// Setup Event Listeners
 function setupEventListeners() {
-    // Search functionality
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
         searchInput.addEventListener('input', debounce(searchQuestions, 300));
     }
     
-    // Close modal when clicking outside
     window.addEventListener('click', function(event) {
         const modal = document.getElementById('loginModal');
         const deleteModal = document.getElementById('deleteModal');
@@ -162,16 +152,13 @@ function setupEventListeners() {
         }
     });
     
-    // Handle keyboard shortcuts
     document.addEventListener('keydown', function(event) {
-        // Escape to close modal or notifications
         if (event.key === 'Escape') {
             closeModal();
             closeDeleteModal();
             closeNotifications();
         }
-        
-        // Ctrl/Cmd + K to focus search
+
         if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
             event.preventDefault();
             if (searchInput) {
@@ -181,20 +168,16 @@ function setupEventListeners() {
     });
 }
 
-// Page Navigation
 function showPage(pageId) {
-    // Hide all pages
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
     
-    // Show selected page
     const targetPage = document.getElementById(pageId + 'Page');
     if (targetPage) {
         targetPage.classList.add('active');
         currentPage = pageId;
     }
     
-    // Update navigation active state
     updateNavigation();
 }
 
@@ -208,7 +191,6 @@ function updateNavigation() {
     });
 }
 
-// Questions Management
 function loadQuestions() {
     displayQuestions(getFilteredQuestions());
     updatePagination();
@@ -217,7 +199,6 @@ function loadQuestions() {
 function getFilteredQuestions() {
     let filteredQuestions = [...sampleQuestions];
     
-    // Apply search filter
     if (searchTerm) {
         filteredQuestions = filteredQuestions.filter(question =>
             question.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -327,12 +308,10 @@ function filterQuestions(filter) {
     loadQuestions();
 }
 
-// Question Detail
 function showQuestionDetail(questionId) {
     const question = sampleQuestions.find(q => q.id === questionId);
     if (!question) return;
     
-    // Increment view count
     question.views += 1;
     
     const detailContainer = document.getElementById('questionDetail');
@@ -402,7 +381,6 @@ function showQuestionDetail(questionId) {
         </div>
     `;
     
-    // Initialize answer editor
     answerQuill = new Quill('#answer-editor', {
         theme: 'snow',
         placeholder: 'Write your answer here...',
@@ -418,7 +396,6 @@ function showQuestionDetail(questionId) {
     showPage('questionDetail');
 }
 
-// Delete Functions
 function deleteQuestion(questionId, event) {
     event.stopPropagation();
     
@@ -432,17 +409,15 @@ function deleteQuestion(questionId, event) {
     deleteMessage.textContent = `Are you sure you want to delete the question "${question.title}"?`;
     
     confirmBtn.onclick = function() {
-        // Remove question from array
+    
         const index = sampleQuestions.findIndex(q => q.id === questionId);
         if (index > -1) {
             sampleQuestions.splice(index, 1);
         }
         
-        // Reload questions and close modal
         loadQuestions();
         closeDeleteModal();
         
-        // Show success message
         showNotification('Question deleted successfully');
     };
     
@@ -472,11 +447,9 @@ function deleteAnswer(questionId, answerId, event) {
             question.answers = question.answersList.length;
         }
         
-        // Refresh question detail and close modal
         showQuestionDetail(questionId);
         closeDeleteModal();
-        
-        // Show success message
+
         showNotification('Answer deleted successfully');
     };
     
@@ -488,7 +461,6 @@ function closeDeleteModal() {
     deleteModal.classList.remove('show');
 }
 
-// Submit Answer
 function submitAnswer(questionId) {
     if (!answerQuill) return;
     
@@ -501,9 +473,8 @@ function submitAnswer(questionId) {
     const question = sampleQuestions.find(q => q.id === questionId);
     if (!question) return;
     
-    // Create new answer
     const newAnswer = {
-        id: Date.now(), // Simple ID generation
+        id: Date.now(), 
         content: content,
         author: currentUser ? currentUser.username : 'Anonymous User',
         authorId: currentUser ? currentUser.id : 0,
@@ -511,18 +482,18 @@ function submitAnswer(questionId) {
         accepted: false
     };
     
-    // Add answer to question
+    
     question.answersList.push(newAnswer);
     question.answers = question.answersList.length;
     
-    // Refresh question detail
+    
     showQuestionDetail(questionId);
     
     // Show success message
     showNotification('Answer posted successfully');
 }
 
-// Question Submission
+
 function submitQuestion(event) {
     event.preventDefault();
     
@@ -545,9 +516,8 @@ function submitQuestion(event) {
         return;
     }
     
-    // Create new question
     const newQuestion = {
-        id: Date.now(), // Simple ID generation
+        id: Date.now(), 
         title: title,
         description: description,
         answers: 0,
