@@ -1,5 +1,3 @@
-// StackIt Q&A Platform - Node.js Express Backend Server
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -7,12 +5,9 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
-
-// In-memory data storage
 let users = [
     {
         id: 1,
@@ -126,12 +121,10 @@ function formatTimeAgo(date) {
     return `${days} day${days > 1 ? 's' : ''} ago`;
 }
 
-// Routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Questions API
 app.get('/api/questions', (req, res) => {
     const questionsWithDetails = questions.map(question => {
         const author = getUserById(question.authorId);
@@ -156,7 +149,7 @@ app.post('/api/questions', (req, res) => {
         title,
         description,
         tags,
-        authorId: 1, // Default user for now
+        authorId: 1,
         views: 0,
         createdAt: new Date(),
         accepted: false
@@ -180,7 +173,6 @@ app.delete('/api/questions/:id', (req, res) => {
     res.json({ success: true });
 });
 
-// Answers API
 app.post('/api/questions/:id/answers', (req, res) => {
     const questionId = parseInt(req.params.id);
     const { content } = req.body;
@@ -189,7 +181,7 @@ app.post('/api/questions/:id/answers', (req, res) => {
         id: answers.length + 1,
         questionId,
         content,
-        authorId: 1, // Default user for now
+        authorId: 1,
         accepted: false,
         createdAt: new Date()
     };
@@ -210,7 +202,6 @@ app.delete('/api/answers/:id', (req, res) => {
     res.json({ success: true });
 });
 
-// Start server
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`StackIt server running on port ${PORT}`);
 });
