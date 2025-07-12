@@ -1,6 +1,3 @@
-/* StackIt Q&A Platform - Complete CSS Styles */
-
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +12,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation */
 .navbar {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     border-bottom: 3px solid #3498db;
@@ -63,7 +59,7 @@ body {
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
 }
 
-/* Notification System */
+
 .notification-container {
     position: relative;
 }
@@ -176,14 +172,13 @@ body {
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
 }
 
-/* Main Container */
+
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* Page System */
 .page {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
@@ -210,7 +205,6 @@ body {
     font-size: 1.1rem;
 }
 
-/* Filters */
 .filters {
     display: flex;
     gap: 1rem;
@@ -237,7 +231,7 @@ body {
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
 }
 
-/* Search */
+
 .search-container {
     position: relative;
     max-width: 600px;
@@ -270,7 +264,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Questions Container */
+
 .questions-container {
     margin: 2rem 0;
 }
@@ -406,7 +400,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Question Form */
+
 .question-form {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     border: 2px solid #34495e;
@@ -452,7 +446,7 @@ body {
     font-style: italic;
 }
 
-/* Rich Text Editor */
+
 #editor-container {
     background: #1a252f;
     border: 2px solid #34495e;
@@ -487,7 +481,7 @@ body {
     font-style: italic;
 }
 
-/* Tags Input */
+
 .tags-input-container {
     background: #1a252f;
     border: 2px solid #34495e;
@@ -548,7 +542,7 @@ body {
     color: #95a5a6;
 }
 
-/* Buttons */
+
 .btn-primary {
     background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
@@ -610,7 +604,7 @@ body {
     align-items: center;
 }
 
-/* Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -661,7 +655,7 @@ body {
     color: #e74c3c;
 }
 
-/* Question Detail */
+
 .question-detail {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     border: 2px solid #34495e;
@@ -778,7 +772,7 @@ body {
     color: white;
 }
 
-/* No Questions */
+
 .no-questions {
     text-align: center;
     padding: 4rem 2rem;
@@ -796,7 +790,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Pagination */
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -826,7 +820,7 @@ body {
     cursor: not-allowed;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
