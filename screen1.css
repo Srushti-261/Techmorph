@@ -31,7 +31,6 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
 .header {
     background-color: var(--bg-secondary);
     padding: 15px 0;
@@ -118,7 +117,7 @@ body {
     background-color: #3a7bc8;
 }
 
-/* Main Content */
+
 .main-content {
     padding: 30px 0;
 }
@@ -130,7 +129,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Filters Section */
+
 .filters-section {
     display: flex;
     gap: 15px;
@@ -154,7 +153,7 @@ body {
     background-color: var(--hover-bg);
 }
 
-/* Ask Question Button */
+
 .ask-question-btn {
     background-color: var(--accent-color);
     color: white;
@@ -171,7 +170,7 @@ body {
     background-color: #3a7bc8;
 }
 
-/* Question Card */
+
 .question-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -279,7 +278,7 @@ body {
     color: #3a7bc8;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -338,7 +337,6 @@ body {
     }
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -354,14 +352,14 @@ body {
     animation: fadeIn 0.3s ease-out;
 }
 
-/* Focus States */
+
 button:focus,
 input:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 2px;
 }
 
-/* Smooth Scrolling */
+
 html {
     scroll-behavior: smooth;
 }
