@@ -37,7 +37,7 @@ body {
     position: relative;
 }
 
-/* Header */
+
 .header {
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 15px;
@@ -112,7 +112,7 @@ body {
     border: 2px solid var(--border-color);
 }
 
-/* Main Content */
+
 .main-content {
     max-width: 800px;
     margin: 0 auto;
@@ -229,12 +229,12 @@ body {
     font-style: italic;
 }
 
-/* Tags Input */
+
 .tags-input {
     font-family: monospace;
 }
 
-/* Form Actions */
+
 .form-actions {
     display: flex;
     justify-content: center;
@@ -259,7 +259,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Screen Label */
+
 .screen-label {
     position: absolute;
     top: -60px;
@@ -277,7 +277,7 @@ body {
     font-size: 12px;
 }
 
-/* Rich Text Label */
+
 .rich-text-label {
     position: absolute;
     top: 180px;
@@ -288,7 +288,7 @@ body {
     transform: rotate(-15deg);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .app-container {
         padding: 15px;
@@ -360,7 +360,7 @@ body {
     }
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -376,7 +376,7 @@ body {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Focus States */
+
 button:focus,
 input:focus,
 .rich-text-editor:focus {
@@ -384,12 +384,12 @@ input:focus,
     outline-offset: 2px;
 }
 
-/* Smooth Scrolling */
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Rich Text Editor Content Styling */
+
 .rich-text-editor h1,
 .rich-text-editor h2,
 .rich-text-editor h3,
